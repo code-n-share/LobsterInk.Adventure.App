@@ -1,0 +1,10 @@
+<div *ngIf="(adventure$ | async) as adventure">
+    <h3>{{adventure.title}}</h3>
+
+    <div class="game">
+		<form class="player">
+			<input name="name" type="text" [(ngModel)]="playerName"/>
+		</form>
+		<button class="game-btn" (click)="startNew()" [routerLink]="['/choice', adventure.firstPlot.plotId]">Start</button>
+	</div>
+</div>

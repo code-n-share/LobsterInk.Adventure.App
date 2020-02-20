@@ -1,0 +1,9 @@
+<div class="oc-h-bar oc-border" *ngIf="hasParentNode"></div>
+<div [ngClass]="isNodeSelected(plot?.plotId) ? 'oc-green-bg' : 'oc-background' ">
+    <div class="oc-box oc-border ">
+        <div class="oc-designation">{{plot?.action}}</div>
+        <div class="oc-name">{{plot?.description}}</div>
+    </div>
+</div>
+
+<div class="oc-h-bar oc-border" *ngIf="plot?.choices.length"></div>

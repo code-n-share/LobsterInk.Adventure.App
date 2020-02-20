@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+.oc-border {
+	border: 1px solid dodgerblue;
+}
+
+.oc-background {
+	background-color: cornflowerblue;
+}
+
+.oc-green-bg {
+    background-color: green;
+}
+
+.oc-name {
+	font-family: serif;
+    //white-space: nowrap;
+    word-wrap: break-word;
+}
+
+.oc-designation {
+	font-family: sans-serif;
+	font-style: italic;
+    //white-space: nowrap;
+    word-wrap: break-word;
+}

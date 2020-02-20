@@ -1,0 +1,19 @@
+<div class="card">
+    <div style="margin-right: 200px">
+        <h2> {{gameTitle}} </h2>
+
+        <div *ngIf="(currentPlotNode$ | async) as currentPlot">
+            <h2>
+                {{currentPlot.description}}
+            </h2>
+
+            <li *ngFor="let choice of currentPlot.choices">
+                <button class="choice" [routerLink]="['/choice', choice.plotId]">{{choice.action}}</button>
+            </li>
+            <div *ngIf="!currentPlot.choices?.length" class="game-over">
+                <div>Game Over !</div>
+                <button [routerLink]="['/final']">See Decision Tree</button>
+            </div>
+        </div>
+    </div>
+</div>

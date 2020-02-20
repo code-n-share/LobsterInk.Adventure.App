@@ -1,0 +1,18 @@
+<div style="margin-top: 24px;">
+    <div *ngIf="(currentPlotNode$ | async) as plot; else loading">
+        <app-node *ngIf="plot" [plot]="plot" [hasParentNode]="hasParentNode"></app-node>
+        <div class="oc-reports">
+            <ng-container *ngFor="let node of plot?.choices; first as isFirst; last as isLast">
+                <div class="oc-org-container">
+                    <div class="oc-h-bar-container">
+                        <div class="oc-h-bar oc-border" [style.border-color]="isFirst?'transparent':''"></div>
+                        <div class="oc-border"></div>
+                        <div class="oc-h-bar oc-border" [style.border-color]="isLast?'transparent':''"></div>
+                    </div>
+                    <app-decision-diagram [plotId]="node.plotId" [hasParentNode]="true"></app-decision-diagram>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <ng-template #loading>Loading Decision Tree...</ng-template>
+</div>
